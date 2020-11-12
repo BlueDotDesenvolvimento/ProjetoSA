@@ -32,7 +32,7 @@
 
     <header>
 		<a href="#" class="logo">
-            <img th:src="@{images/logoBranca.png}">
+            <img th:src="@{images/logo.png}">
         </a>
 		<ul>
 			<li><a href="#">Página Inicial</a></li>
@@ -40,7 +40,14 @@
 			<li><a href="#">Produtos</a></li>
 			<li><a href="#">Pedidos</a></li>
 			<li><a href="#">Contatos</a></li>
+			<li><form th:action="@{/logout}" method="POST">
+                	<button th:onclick="window.location.href='@{/login}'">
+                    	Sair
+                    </button>
+                </form>
+			</li>
 		</ul>
+			
 	</header>
 	<section><img class="banner" th:src="@{images/MercadoImagem.jpg}"></section>
 

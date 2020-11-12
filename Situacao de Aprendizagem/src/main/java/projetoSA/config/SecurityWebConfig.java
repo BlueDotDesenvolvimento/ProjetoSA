@@ -23,7 +23,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter	 {
 			//Habilitar ou desabilitar paginas
 		
 			.authorizeRequests()
-			.antMatchers("/").permitAll()
+			.antMatchers("/").hasRole("padrao")
+			.antMatchers("/cadastro").permitAll()
 			.antMatchers("/funcionarios/**").hasRole("padrao")
 		
 			//Habilitar statics
@@ -44,7 +45,7 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter	 {
 			
 			.formLogin()
 				.loginPage("/login")
-				.defaultSuccessUrl("/")
+				.defaultSuccessUrl("/", true)
 				.permitAll()
 			.and()
 			
@@ -59,6 +60,11 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter	 {
 			.userDetailsService(projetoDetailsService)
 			.passwordEncoder(new BCryptPasswordEncoder());	
 		
+	}
+	
+public static void main(String[]args) {
+		
+		System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
 	
 }

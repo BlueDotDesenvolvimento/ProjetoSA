@@ -14,4 +14,9 @@ public class IndexController {
 	public String getLogin() {
 		return "login";
 	}
+	
+	@GetMapping("/cadastro")
+	public String getCadastro() {
+		return "cadastro";
+	}
 }
