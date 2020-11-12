@@ -10,23 +10,23 @@ import org.springframework.lang.NonNull;
 
 @Entity(name = "funcionario")
 public class Funcionario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NonNull
 	@Size(max = 80)
 	private String nome;
-	
+
 	@NonNull
 	@Size(max = 50)
 	private String login;
-	
+
 	@NonNull
 	@Size(max = 50)
 	private String senha;
-	
+
 	@NonNull
 	@Size(max = 50)
 	private String cargo;
@@ -76,6 +76,5 @@ public class Funcionario {
 		return "Funcionario [id=" + id + ", nome=" + nome + ", login=" + login + ", senha=" + senha + ", cargo=" + cargo
 				+ "]";
 	}
-	
-	
+
 }

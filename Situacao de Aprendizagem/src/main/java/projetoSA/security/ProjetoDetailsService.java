@@ -17,42 +17,38 @@ import projetoSA.model.Usuario;
 import projetoSA.repository.PermissaoRepository;
 import projetoSA.repository.UsuarioRepository;
 
-
-
-@Component	
+@Component
 public class ProjetoDetailsService implements UserDetailsService {
-		
+
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
+
 	@Autowired
 	private PermissaoRepository permissaoRepository;
-	
+
 	@Override
-	public UserDetails loadUserByUsername(String login)
-		throws UsernameNotFoundException{
-		
+	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+
 		Usuario usuario = usuarioRepository.findByLogin(login);
-		if(usuario == null) {
+		if (usuario == null) {
 			throw new UsernameNotFoundException("Usuário não encontrado");
 		}
-		
-		return new UsuarioSistema(usuario.getNome(), usuario.getLogin(), usuario.getSenha(), 
-				authorities(usuario));
-		
+
+		return new UsuarioSistema(usuario.getNome(), usuario.getLogin(), usuario.getSenha(), authorities(usuario));
+
 	}
-	
+
 	public Collection<? extends GrantedAuthority> authorities(Usuario usuario) {
-		
+
 		Collection<GrantedAuthority> autorizacoes = new ArrayList<>();
-		
+
 		List<Permissao> permissoes = permissaoRepository.findByUsuariosIn(usuario);
-		
-		for(Permissao permissao : permissoes) {
+
+		for (Permissao permissao : permissoes) {
 			autorizacoes.add(new SimpleGrantedAuthority("ROLE_" + permissao.getNome()));
 		}
-		
+
 		return autorizacoes;
-				
+
 	}
 }

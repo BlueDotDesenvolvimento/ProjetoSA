@@ -11,19 +11,17 @@ import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
 
-
-
 @Entity(name = "permissao")
 public class Permissao {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NonNull
 	@Size(max = 30)
 	private String nome;
-	
+
 	@ManyToMany(mappedBy = "permissoes")
 	private List<Usuario> usuarios;
 
@@ -55,6 +53,5 @@ public class Permissao {
 	public String toString() {
 		return "Permissao [id=" + id + ", nome=" + nome + "]";
 	}
-	
-	
+
 }

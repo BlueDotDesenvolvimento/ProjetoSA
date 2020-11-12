@@ -9,12 +9,12 @@ public class IndexController {
 	public String index() {
 		return "index";
 	}
-	
+
 	@GetMapping("/login")
 	public String getLogin() {
 		return "login";
 	}
-	
+
 	@GetMapping("/cadastro")
 	public String getCadastro() {
 		return "cadastro";

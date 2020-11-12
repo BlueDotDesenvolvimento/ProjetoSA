@@ -19,26 +19,22 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NonNull
 	@Size(max = 80)
 	private String nome;
-	
+
 	@NonNull
 	@Size(max = 30)
 	private String login;
-	
+
 	@NonNull
 	@Size(max = 30)
 	private String senha;
-	
+
 	@ManyToMany
-	@JoinTable(
-		name="usuario_permissao",
-		joinColumns=@JoinColumn(name="usuario_id"),
-		inverseJoinColumns=@JoinColumn(name="permissao_id")
-	)
-	
+	@JoinTable(name = "usuario_permissao", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "permissao_id"))
+
 	private List<Permissao> permissoes;
 
 	public Long getId() {
@@ -78,5 +74,4 @@ public class Usuario {
 		return "Usuario [id=" + id + ", nome=" + nome + ", login=" + login + ", senha=" + senha + "]";
 	}
 
-	
 }
