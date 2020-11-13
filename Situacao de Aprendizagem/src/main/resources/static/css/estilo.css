@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url(./config.css);
+@import url(./custom.css);
+@import url(./responsive.css);
 
 *{
     margin: 0;
@@ -14,70 +17,6 @@ body{
     min-height:100vh;
     overflow-x: hidden;
  }
- 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.6s;
-    padding: 40px 100px;
-    z-index: 100000;
-}
-
-header.sticky{
-    padding: 5px 100px;
-    background: #fff;
-}
-
-header .logo{
-    position: relative;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;
-    
-}
-
-header .logo img :first-child {
-    height: auto;
-    width: 225px;
-    filter: saturate(0%);
-    filter: brightness(0%);
-    -webkit-filter: saturate(100%);
-    -webkit-filter: brightness(100%);
-}
-
-header ul{
-    position: relative;
-    display: flex;
-    top: -70px;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-}
-
-header ul li{
-    position: relative;
-    list-style: none;
-}
-
-header ul li a{
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 500px;
-    transition: 0.6s;
-}
-
 .banner{
     position: static;
     width: 100vw;
@@ -89,14 +28,7 @@ header ul li a{
     background-size: cover;
 }
 
-header.sticky ul li a{
-    color:#000 ;
-}
 
-header.sticky .logo img {
-    filter: invert(1);
-    -webkit-filter: invert(1);
-}
 
 .container-login{
     margin-left: 35vmax;
