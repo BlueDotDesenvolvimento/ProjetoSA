@@ -1,4 +1,4 @@
-package projetoSA.config;
+package br.com.projetoSA.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import projetoSA.security.ProjetoDetailsService;
+import br.com.projetoSA.security.ProjetoDetailsService;
 
 @EnableWebSecurity
 public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
@@ -21,7 +21,9 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
 				// Habilitar ou desabilitar paginas
 
-				.authorizeRequests().antMatchers("/").hasRole("padrao").antMatchers("/cadastro").permitAll()
+				.authorizeRequests()
+				.antMatchers("/").hasRole("padrao")
+				.antMatchers("/cadastro").permitAll()
 				.antMatchers("/funcionarios/**").hasRole("padrao")
 
 				// Habilitar statics

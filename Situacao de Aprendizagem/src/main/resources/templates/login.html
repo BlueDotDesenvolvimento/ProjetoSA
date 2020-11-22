@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" th:href="@{../css/estilo.css}">
 <link rel="stylesheet"
 	th:href="@{../bootstrap-4.5.3-dist/css/bootstrap.min.css}">
@@ -42,13 +41,10 @@
                 <a class="nav-link active" href="#">Página Inicial</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
+                <a class="nav-link" th:href="@{produto/view}">Produtos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Serviços</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Portfólio</a>
+                <a class="nav-link" href="#">Mercados</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contato</a>
@@ -117,7 +113,7 @@
 		</div>
 	</div>
 	
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script th:src="@{../jquery-3.5.1/jquery-3.5.1.js}"></script>
 	<script th:src="@{../bootstrap-4.5.3-dist/js/bootstrap.min.js}"></script>
 	<script th:src="@{../js/main.js}"></script>

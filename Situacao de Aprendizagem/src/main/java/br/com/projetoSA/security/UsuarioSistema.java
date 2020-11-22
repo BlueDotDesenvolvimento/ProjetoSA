@@ -1,4 +1,4 @@
-package projetoSA.security;
+package br.com.projetoSA.security;
 
 import java.util.Collection;
 

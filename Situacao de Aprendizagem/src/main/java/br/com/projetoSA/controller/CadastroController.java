@@ -1,4 +1,4 @@
-package projetoSA.controller;
+package br.com.projetoSA.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import projetoSA.model.Usuario;
-import projetoSA.repository.UsuarioRepository;
+import br.com.projetoSA.model.Usuario;
+import br.com.projetoSA.repository.UsuarioRepository;
 
 @Controller
 public class CadastroController {
@@ -23,6 +23,7 @@ public class CadastroController {
 		model.addAttribute("usuario", new Usuario());
 		return "cadastro/addUsuario";		
 	}
+	
 	@PostMapping("/cadastro/saveUsuario")
 	public String saveUsuario(Usuario usuario) {
 		try {
