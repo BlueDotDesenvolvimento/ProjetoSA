@@ -1,10 +1,14 @@
 package br.com.projetoSA.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.projetoSA.security.ProjetoDetailsService;
@@ -14,6 +18,9 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private ProjetoDetailsService projetoDetailsService;
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -23,14 +30,17 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
 				.authorizeRequests()
 				.antMatchers("/").hasRole("padrao")
-				.antMatchers("/cadastro").permitAll()
+				.antMatchers("/cadastro/**").permitAll()
 				.antMatchers("/funcionarios/**").hasRole("padrao")
 
 				// Habilitar statics
 
-				.antMatchers("/bootstrap-4.5.3-dist/**").permitAll().antMatchers("/css/**").permitAll()
-				.antMatchers("/fontawesome-free-5.15.1-web/**").permitAll().antMatchers("/jquery-3.5.1/**").permitAll()
-				.antMatchers("/js/**").permitAll().antMatchers("/images/**").permitAll()
+				.antMatchers("/bootstrap-4.5.3-dist/**").permitAll()
+				.antMatchers("/css/**").permitAll()
+				.antMatchers("/fontawesome-free-5.15.1-web/**").permitAll()
+				.antMatchers("/jquery-3.5.1/**").permitAll()
+				.antMatchers("/js/**").permitAll()
+				.antMatchers("/images/**").permitAll()
 
 				// Outras autenticações
 
@@ -50,10 +60,13 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 		builder.userDetailsService(projetoDetailsService).passwordEncoder(new BCryptPasswordEncoder());
 
 	}
-
-	public static void main(String[] args) {
-
-		System.out.println(new BCryptPasswordEncoder().encode("123"));
+	
+	@Bean
+	public AuthenticationProvider authProvider() {
+		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+		provider.setUserDetailsService(userDetailsService);
+		provider.setPasswordEncoder(new BCryptPasswordEncoder());
+		return provider;
 	}
 
 }

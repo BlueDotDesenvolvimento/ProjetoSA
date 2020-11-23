@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ProdutoController {
 
 	@GetMapping("/produto/view")
-	public String produtoView() {
+	public String viewProduto() {
 		return "produto/view";
 	}
 	
 	@GetMapping("/produto/edit")
-	public String produtoEdit() {
+	public String editProduto() {
 		return "produto/edit";
 	}
 	
 	@GetMapping("/produto/add")
-	public String produtoAdd() {
+	public String addProduto() {
 		return "produto/add";
 	}
 }
