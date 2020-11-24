@@ -1,4 +1,4 @@
-package projetoSA;
+package br.com.projetoSA;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

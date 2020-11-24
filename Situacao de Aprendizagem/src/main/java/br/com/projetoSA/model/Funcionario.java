@@ -1,4 +1,4 @@
-package projetoSA.model;
+package br.com.projetoSA.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

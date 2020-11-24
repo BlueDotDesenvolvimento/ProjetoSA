@@ -1,4 +1,4 @@
-package projetoSA.security;
+package br.com.projetoSA.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,10 +12,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import projetoSA.model.Permissao;
-import projetoSA.model.Usuario;
-import projetoSA.repository.PermissaoRepository;
-import projetoSA.repository.UsuarioRepository;
+import br.com.projetoSA.model.Permissao;
+import br.com.projetoSA.model.Usuario;
+import br.com.projetoSA.repository.PermissaoRepository;
+import br.com.projetoSA.repository.UsuarioRepository;
 
 @Component
 public class ProjetoDetailsService implements UserDetailsService {

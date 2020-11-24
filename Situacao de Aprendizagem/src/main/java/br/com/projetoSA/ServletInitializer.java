@@ -1,4 +1,4 @@
-package projetoSA;
+package br.com.projetoSA;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
