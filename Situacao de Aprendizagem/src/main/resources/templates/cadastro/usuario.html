@@ -14,7 +14,7 @@
 		<div class="container">
 		  <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
 			<a class="navbar-brand">
-				<a th:href="@{/}" class="logo"> <img th:src="@{../images/logo.png}">
+				<!-- <a th:href="@{/}"> <img class="logo" th:src="@{../images/logoTeste.png}"> -->
 			</a>
 			<button
 			  class="navbar-toggler"
@@ -33,10 +33,10 @@
 				  <a class="nav-link active" th:href="@{/}">Página Inicial</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link" th:href="@{produto/view}">Produtos</a>
+				  <a class="nav-link" th:href="@{../produto/view}">Produtos</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link" th:href="@{mercado/view}">Mercados</a>
+				  <a class="nav-link" th:href="@{../mercado/view}">Mercados</a>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="#">Contato</a>
@@ -54,17 +54,17 @@
 		<form class="form-login" th:action="@{/cadastro/usuario/save}" th:object="${usuario}" method="POST">
 			<div class="form-group">
 				<label>Nome</label>
-				<input class="form-control" name="nome" th:field="*{nome}" type="text" maxlength=80 required />
+				<input class="form-control" name="nome" th:field="*{nome}" type="text" minlength="8" maxlength=60 required />
 			</div>
 			
 			<div class="form-group">
 				<label>Login ou email</label>
-				<input class="form-control" name="login" th:field="*{login}" type="text" maxlength=30 required />
+				<input class="form-control" name="login" th:field="*{login}" type="text" minlength="8" maxlength=60 required />
 			</div>
 			
 			<div class="form-group">
 				<label>Senha</label>
-				<input class="form-control" name="senha" th:field="*{senha}" type="password" maxlength=30  required />
+				<input class="form-control" name="senha" th:field="*{senha}" type="password" minlength="8" maxlength=60  required />
 			</div>
 			
 			<div class="form-group btn-login">

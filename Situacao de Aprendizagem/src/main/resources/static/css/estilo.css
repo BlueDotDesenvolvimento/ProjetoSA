@@ -16,9 +16,17 @@ body{
     background-color:#181818;
     min-height:100vh;
     overflow-x: hidden;
- }
+}
+
+
+
+.background-banner {
+    position: relative;
+    background-color: antiquewhite;
+}
+
 .banner{
-    position: static;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     background: no-repeat center center fixed;
@@ -26,22 +34,29 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
+}
+
+.logo{
+    width: 200px;
+    height: auto;
 }
 
 .container-login{
-    margin-left: 35vmax;
+    color: #fff;
+    position: relative;
+    margin-left: 10vmax;
     height: fit-content;
     width: 30vmax;
-    margin-top: 10vmax;
-    border: solid #000 1px;
+    
     padding: 15px;
+    border-radius: 50px;
 }
 
 .container-produto{
     background-color: #fff;
     border: #000 1px solid;
     margin: 5% 5% 5% 5%;
-    
 }
 
 .container-produto-filtro{
@@ -52,7 +67,7 @@ body{
 }
 
 .titulo-login {
-    font-size: 3.5rem;
+    font-size: 6rem;
     padding-left: 20px;
 }
 
@@ -77,7 +92,7 @@ body{
     background: none;
 }
 
-.footer{
+/* .footer{
     position: relative;
     bottom: 0;
     width: 100vw;
@@ -163,4 +178,4 @@ body{
         width: 100%;
         margin-bottom: 30px;
     }
-}
+} */

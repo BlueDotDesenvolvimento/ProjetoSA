@@ -21,15 +21,15 @@ public class Usuario {
 	private Long id;
 
 	@NonNull
-	@Size(max = 60)
+	@Size(max = 120)
 	private String nome;
 
 	@NonNull
-	@Size(max = 60)
+	@Size(max = 120)
 	private String login;
 
 	@NonNull
-	@Size(max = 60)
+	@Size(max = 120)
 	private String senha;
 
 	@ManyToMany
