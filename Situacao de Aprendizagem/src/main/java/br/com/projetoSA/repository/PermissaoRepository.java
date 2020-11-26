@@ -9,6 +9,10 @@ import br.com.projetoSA.model.Usuario;
 
 public interface PermissaoRepository extends JpaRepository<Permissao, Long> {
 
-	public List<Permissao> findByUsuariosIn(Usuario... usuario);
+	public List<Permissao> findByUsuariosIn(Usuario ... usuario);
 
+	public Permissao findByIdIsNull();
+
+	public List<Permissao> findByNomeLike(String nome);
+	
 }

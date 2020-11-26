@@ -16,9 +16,8 @@ body{
     background-color:#181818;
     min-height:100vh;
     overflow-x: hidden;
+    width: 100%
 }
-
-
 
 .background-banner {
     position: relative;
@@ -34,7 +33,6 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
 }
 
 .logo{
@@ -48,24 +46,95 @@ body{
     margin-left: 10vmax;
     height: fit-content;
     width: 30vmax;
-    
     padding: 15px;
     border-radius: 50px;
+}
+
+/********** <Produto> **********/
+
+.container {
+	max-width: 100%;
 }
 
 .container-produto{
     background-color: #fff;
     border: #000 1px solid;
-    margin: 5% 5% 5% 5%;
+    width: 100%;
+    max-width: 100%;
+    height: 50vmax;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 50vmax;
+    margin: 0;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
 }
 
-.container-produto-filtro{
+.container-produto-filtro {
+    padding: 15px 15px 15px 15px;
+    font-size: 1.5rem;
+}
+
+.container-produtos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vmax;
+    float: left;
+}
+
+.card-produto {
+    padding: .2rem;
+    margin: 15px 10px 10px 10px;
+}
+
+/* .container-produtos-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 50vmax;
+    float: left;
+} 
+
+.card-produto {
+    padding: .2rem;
+    margin: 15px 10px 10px 10px;
+}
+
+.filtro-1 {
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.filtro-2, .filtro-3, .filtro-4, .filtro-5 {
+    padding: 15px;
+    font-size: 1.5rem;
+    width: max-content;
+}
+
+ .container-produto-filtro{
     padding: 15px 15px 15px 15px;
     width: 200px;
     height: 100%;
-    background-color: #000;
-}
+    float: left;
+} */
 
+/********** </Produto> **********/
+
+/********** <Login> **********/
+
+/********** </Login> **********/
+
+/********** <Index> **********/
+
+/********** </Index> **********/
 .titulo-login {
     font-size: 6rem;
     padding-left: 20px;
@@ -178,4 +247,4 @@ body{
         width: 100%;
         margin-bottom: 30px;
     }
-} */
+*/

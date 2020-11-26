@@ -32,7 +32,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 				.authorizeRequests()
 				.antMatchers("/").permitAll()
 				.antMatchers("/cadastro/**").permitAll()
-				.antMatchers("/funcionarios/**").hasRole("padrao")
+				.antMatchers("/funcionarios/**").hasAnyRole("admin", "funcionario", "gerente")
+				
 
 				// Habilitar statics
 
